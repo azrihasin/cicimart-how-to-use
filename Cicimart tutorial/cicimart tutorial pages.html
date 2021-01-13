@@ -1,0 +1,77 @@
+<html>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<body>
+
+    <div class="cards">
+        <div class="card" id="title">
+            <h1 class="cicimart">Cici <br> Mart</h1>
+            <p class="cicimart-subtitle">Learn how to buy at CiciMart with few simple steps</p>
+            <button class="btn">Get started</button>
+        </div>
+        <div class="card" data-aos="fade-up">
+          <h1 class="step"> Choose <br> your item </h1>
+          <p>Choose your item and add the item to the cart </p>
+          <img class="step1" src="images/Products by search.png" alt="">
+        </div>
+        <div class="card" data-aos="fade-left"> 
+          <h1 class="step"> Fill the details <br> and confirm order </h1>
+          <p> Fill in your delivery detail and confirm your order for us <br> to send your item </p>
+          <img class="step1" src="images/Checkout 1 - delivery.png" alt=""></div>
+
+        <div class="card" data-aos="fade-right">
+          <h1 class="step"> Wait for <br> your order </h1>
+          <p>Wait your order to be processed and we will send <br> it to your door</p>
+          <img class="step1" src="images/Order detail.png" alt=""></div>
+
+        <div class="card" data-aos="fade-down">
+        <h1 class="step"> Receive <br> your order </h1>
+          <p> Receive your item and enjoy the best quality <br> of our services </p>
+          <img class="step1" src="images/received.png" alt=""></div>
+      </div>
+
+<script>
+
+    var position =  window.innerHeight;
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          let scrollDistance = document.documentElement.clientHeight/5;
+          
+          window.scrollBy(0,scrollDistance);
+        });
+      });
+
+      $(window).scroll(function () {
+
+        /* Check the location of each desired element */
+        $('.card').each(function (i) {
+    
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+    
+            /* If the object is completely visible in the window, fade it it */
+            if (bottom_of_window > bottom_of_object) {
+    
+                $(this).animate({
+                    'opacity': '1'
+                }, 500);
+    
+             }
+         });
+    });
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
